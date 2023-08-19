@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  mongodb:
+    image: mongo:5.0
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=myrootuser
+      - MONGO_INITDB_ROOT_PASSWORD=myrootpassword
+    ports:
+      - "27017:27017"
