@@ -1,0 +1,15 @@
+use("bank")
+
+db.application_train.insertOne({
+    "SK_ID_CURR": 100002,
+    "TARGET": 1,
+    "NAME_CONTRACT_TYPE": "Cash loans",
+    "CODE_GENDER": "M",
+    "FLAG_OWN_CAR": "Y",
+    "FLAG_OWN_REALTY": "N",
+    "CNT_CHILDREN": 0,
+    "AMT_INCOME_TOTAL": 202500.0,
+    "AMT_CREDIT": 406597.5,
+    "AMT_ANNUITY": 24700.5
+})
+
