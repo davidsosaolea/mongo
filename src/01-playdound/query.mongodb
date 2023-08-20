@@ -1,3 +1,8 @@
 use("sample_training")
 
-db.zips.find({ state: "NY"}).count()
+db.zips.find({ state: "AL"})
+
+
+use("STORE")
+
+db.productos.find()
