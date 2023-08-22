@@ -238,3 +238,22 @@ db.productos.updateOne(
 )
 ```
 
+## eliminar documento
+
+``` sh
+user("store")
+
+db.producto.deleteOne({_id:1})
+``` 
+
+``` sh
+user("store")
+
+db.producto.deleteMany({price : 100})
+``` 
+
+``` sh
+user("store")
+
+db.producto.drop()
+``` 
