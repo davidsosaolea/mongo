@@ -155,6 +155,8 @@ db.zips.updateMany(
 
 ## array
 
+agregar 
+
 ``` sh
 use("STORE")
 db.productos.updateOne(
@@ -163,6 +165,75 @@ db.productos.updateOne(
     $push:{
         tags : "hogar"
     }
+}
+)
+```
+
+quitar
+
+
+``` sh
+use("STORE")
+db.zips.updateMany(
+    // query
+    {produto: "silla"},
+
+    // update -operators
+{
+    $pull:{
+        categoria : "cate1"
+    }
+}
+)
+```
+
+``` sh
+use("STORE")
+db.zips.updateMany(
+    // query
+    {produto: "silla"},
+
+    // update -operators
+{
+    $pull:{
+        categoria : "cate1"
+    }
+}
+)
+```
+
+``` sh
+use("STORE")
+db.zips.updateMany(
+    // query
+    {produto: "silla"},
+
+    // update -operators
+{
+    $pull:{
+        categoria :{
+            $in : ["hogar", "electronica"]
+        }
+    }
+}
+)
+```
+
+## insertar actualizaciones
+
+``` sh
+use("STORE")
+db.productos.updateOne(
+    {
+        sensor: "pt100"
+        date: "2023-01-05"
+    },
+{
+    $push:{
+        readings : 123
+    }
+},{
+    upsert: true
 }
 )
 ```
