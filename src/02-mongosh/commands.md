@@ -85,7 +85,7 @@ use("STORE")
 db.productos.updateOne(
     {_id:2},
 {
-    $set:{
+    $inc:{
         prise : 100
     }
 }
@@ -99,8 +99,69 @@ use("STORE")
 db.productos.updateOne(
     {_id:ObjectId("665df76341635fdsf")},
 {
-    $set:{
+    $inc:{
         prise : 100
+    }
+}
+)
+```
+
+## actualizar n documentos
+
+``` sh
+use("STORE")
+db.zips.updateMany(
+    // query
+    {produto: "silla"},
+
+    // update -operators
+{
+    $inc:{
+        prise : 100
+    }
+}
+)
+```
+
+``` sh
+use("STORE")
+db.zips.updateMany(
+    // query
+    {produto: "silla"},
+
+    // update -operators
+{
+    $rename:{
+        categoria : "cate1"
+    }
+}
+)
+```
+
+``` sh
+use("STORE")
+db.zips.updateMany(
+    // query
+    {produto: "silla"},
+
+    // update -operators
+{
+    $unset:{
+        categoria : "cate1"
+    }
+}
+)
+```
+
+## array
+
+``` sh
+use("STORE")
+db.productos.updateOne(
+    {_id:2},
+{
+    $push:{
+        tags : "hogar"
     }
 }
 )
