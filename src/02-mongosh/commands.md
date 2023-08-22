@@ -63,3 +63,46 @@ db.coleccion.insertMany([
 })
 
 ```
+
+## actualizar documentos
+
+``` sh
+use("STORE")
+db.productos.updateOne(
+    {_id:2},
+{
+    $set:{
+        name : 'cambio'
+    }
+}
+)
+```
+
+### incrementar 
+
+``` sh
+use("STORE")
+db.productos.updateOne(
+    {_id:2},
+{
+    $set:{
+        prise : 100
+    }
+}
+)
+```
+
+### con id de mongo
+
+``` sh
+use("STORE")
+db.productos.updateOne(
+    {_id:ObjectId("665df76341635fdsf")},
+{
+    $set:{
+        prise : 100
+    }
+}
+)
+```
+
