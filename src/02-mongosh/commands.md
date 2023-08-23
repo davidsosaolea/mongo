@@ -257,3 +257,41 @@ user("store")
 
 db.producto.drop()
 ``` 
+
+## Usando $eq y $ne
+
+``` sh
+user("store")
+
+db.producto.find({qty: {$ne: 20}})
+``` 
+
+## Usando $gt, $gte, $lt, $lte
+
+$gt >
+$gte >=
+
+$lt <
+$lte <=
+
+``` sh
+user("store")
+
+db.producto.find({qty: {$gt: 20}})
+``` 
+
+``` sh
+user("store")
+
+db.producto.find({qty: {$gt: 25, $lte:30 }})
+``` 
+
+## Usando $regex (expresiones regulares)
+
+``` sh
+user("store")
+
+db.inventory.find({"iten.description" : { $regx : /line/ }})
+``` 
+
+dwd
